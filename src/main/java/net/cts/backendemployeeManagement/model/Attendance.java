@@ -41,20 +41,7 @@ public class Attendance {
 		this.date = date;
 	}
 
-	public Attendance(int attendanceId, Employee employee, Date date) {
-		super();
-		this.attendanceId = attendanceId;
-		this.employee = employee;
-		this.date = date;
-	}
-
-	@Override
-	public String toString() {
-		return "Attendance [attendanceId=" + attendanceId + ", employee=" + employee + ", date=" + date + "]";
-	}
-
     // Constructors, getters, and setters
-    
 
     // ...
 }

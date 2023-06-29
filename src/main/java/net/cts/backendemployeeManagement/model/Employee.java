@@ -9,7 +9,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "emp_id")
-    private int empId;
+    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -20,27 +20,27 @@ public class Employee {
     private String email;
     private String gender;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Department> departments;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Salary> salaries;
 
-    @OneToMany(mappedBy = "employee")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Attendance> attendances;
 
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "Employee [empId=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", gender=" + gender + ", departments=" + departments + "]";
 	}
 
-	public int getEmpId() {
-		return empId;
+	public int getId() {
+		return id;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -99,21 +99,7 @@ public class Employee {
 		this.attendances = attendances;
 	}
 
-	public Employee(int empId, String firstName, String lastName, String email, String gender,
-			List<Department> departments, List<Salary> salaries, List<Attendance> attendances) {
-		super();
-		this.empId = empId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.gender = gender;
-		this.departments = departments;
-		this.salaries = salaries;
-		this.attendances = attendances;
-	}
-
     // Constructors, getters, and setters
 
     // ...
-    
 }

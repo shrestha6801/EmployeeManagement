@@ -11,7 +11,7 @@ public class Salary {
     private int salId;
 
     @ManyToOne
-    @JoinColumn(name = "emp_id")
+    @JoinColumn(name = "emp_id", referencedColumnName = "emp_id")
     private Employee employee;
 
     private double amount;
@@ -50,22 +50,7 @@ public class Salary {
 		this.payroll = payroll;
 	}
 
-	public Salary(int salId, Employee employee, double amount, String payroll) {
-		super();
-		this.salId = salId;
-		this.employee = employee;
-		this.amount = amount;
-		this.payroll = payroll;
-	}
-
-	@Override
-	public String toString() {
-		return "Salary [salId=" + salId + ", employee=" + employee + ", amount=" + amount + ", payroll=" + payroll
-				+ "]";
-	}
-
     // Constructors, getters, and setters
 
     // ...
-    
 }
